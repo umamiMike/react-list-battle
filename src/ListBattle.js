@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import ListElement from './ListElement.js';
+import PropTypes from 'prop-types';
 
 export default class ListBattle extends Component {
+          state = {
+                  winner: "", 
+          }
   constructor(){
     super();//TODO: I really dont remember what super is  for 
 
-    this.Competitors = ["apples","oranges","bananas"];
+    this.Competitors = [];
 //    this.Competitors.forEach(function(element){
 //      element.initCompetition(element,this.competitors);
 //
@@ -15,9 +19,7 @@ export default class ListBattle extends Component {
     return new ListElement(message);
   }
   render () {
-
     return (
-
     <div>
       <h1>
         I am the ListBattle
@@ -26,10 +28,15 @@ export default class ListBattle extends Component {
       <p>
      The competitors are:  { this.ListElements }
       </p>
-      <ListElement message="snarf"/>
-      <ListElement message="snuggles" />
+      <ListElement name="snarf"/>
+      <ListElement name="snuggles" />
     </div>
         ) 
   }
-}
 
+}
+ListBattle.proptypes = {
+
+        Competitors: PropTypes.array
+
+}

@@ -10,10 +10,6 @@ export default class ListBattle extends Component {
     super();//TODO: I really dont remember what super is  for 
 
     this.Competitors = [];
-//    this.Competitors.forEach(function(element){
-//      element.initCompetition(element,this.competitors);
-//
-//    })
   }
   add(message){
     return new ListElement(message);
